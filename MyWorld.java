@@ -20,5 +20,8 @@ public class MyWorld extends World
         
         Character character = new Character();
         addObject(character, 300, 200);
+        
+        Ghost ghost = new Ghost();
+        addObject(ghost, Greenfoot.getRandomNumber(300), Greenfoot.getRandomNumber(200));
     }
 }
