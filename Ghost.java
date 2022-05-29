@@ -36,7 +36,15 @@ public class Ghost extends Actor
         {
             turn(180);
         }
-        removeTouching(Character.class);// Add your action code here.
+        
+        if(isTouching(Character.class))
+        {
+            removeTouching(Character.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.decreaseHealth();
+            world.spawnCharacter();
+        }
+        // Add your action code here.
     }
 
 }
