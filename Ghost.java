@@ -8,58 +8,35 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ghost extends Actor
 {
+    int rightSideOfScreen;
+    int bottomOfScreen;
     
-    private int targetX, targetY;
-    private boolean targetAcquired;
+    public void addedToWorld(World MyWorld)
+    {
+        rightSideOfScreen = MyWorld.getWidth() - 1;
+        bottomOfScreen = MyWorld.getHeight() - 1;
+    }
     /**
      * Act - do whatever the Ghost wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int speed = 1;
+    
     public void act()
     {
-        trackTarget();
-        
-        MyWorld world = (MyWorld)getWorld();
-        if(getY() >= world.getHeight())
+        move(10);
+        if(Greenfoot.getRandomNumber(20) == 1)
         {
-            world.removeObject(this);
-            world.spawnGhost();
-        }
-        else if(getX() >= world .getWidth())
-        {
-            world.removeObject(this);
-            world.spawnGhost();
+            setRotation(Greenfoot.getRandomNumber(360));
         }
         
+        int x = getX();
+        int y = getY();
+        
+        if(x <= 0 || y <= 0 || x >= rightSideOfScreen || y >= bottomOfScreen)
+        {
+            turn(180);
+        }
         removeTouching(Character.class);// Add your action code here.
     }
-    
-    public void trackTarget()
-    {
-        int x = getX() + speed;
-        int y = getY() + speed;
-        
-        Character c = getWorld().getObjects(Character.class).get(0);
 
-        targetX = c.getX();
-        targetY = c.getY();
-        
-        if(targetX < x && targetY < y)
-        {
-            setLocation(x - targetX,y - targetY);
-        }
-        else if(targetX > x && targetY < y)
-        {
-            setLocation(x + targetX,y - targetY);
-        }
-        else if(targetX < x && targetY > y)
-        {
-            setLocation(x - targetX,y + targetY);
-        }
-        else if(targetX > x && targetY > y)
-        {
-            setLocation(x + targetX,y + targetY);
-        }
-    }
 }

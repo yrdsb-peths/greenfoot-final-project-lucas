@@ -27,7 +27,7 @@ public class MyWorld extends World
     public void spawnGhost()
     {
         int x = Greenfoot.getRandomNumber(600);
-        int y = 0;
+        int y = Greenfoot.getRandomNumber(300);
         Ghost ghost = new Ghost();
         addObject(ghost, x, y);
     }
