@@ -16,19 +16,19 @@ public class Character extends Actor
     {
         if(Greenfoot.isKeyDown("a"))
         {
-            move(-1);
+            move(-5);
         }
         else if(Greenfoot.isKeyDown("d"))
         {
-            move(1);
+            move(5);
         }
         else if(Greenfoot.isKeyDown("w"))
         {
-            setLocation(getX(), getY()-1);
+            setLocation(getX(), getY()-5);
         }
         else if(Greenfoot.isKeyDown("s"))
         {
-            setLocation(getX(), getY()+1);
+            setLocation(getX(), getY()+5);
         }// Add your action code here.
     }
 }

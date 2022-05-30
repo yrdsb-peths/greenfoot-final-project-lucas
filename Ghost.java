@@ -23,7 +23,7 @@ public class Ghost extends Actor
     
     public void act()
     {
-        move(10);
+        move(5);
         if(Greenfoot.getRandomNumber(20) == 1)
         {
             setRotation(Greenfoot.getRandomNumber(360));

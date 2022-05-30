@@ -27,7 +27,11 @@ public class MyWorld extends World
         addObject(healthLabel, 50, 50);
         
         spawnGhost();
-        spawnGhost();
+    }
+    
+    public void act()
+    {
+        spawnHeart();
     }
     
     public void spawnCharacter()
@@ -40,6 +44,16 @@ public class MyWorld extends World
     {
         health--;
         healthLabel.setValue(health);
+    }
+    
+    private void spawnHeart()
+    {
+        int randNum = Greenfoot.getRandomNumber(40);
+        if (randNum == 2){
+            int randomX = Greenfoot.getRandomNumber (getWidth());
+            int randomY = Greenfoot.getRandomNumber (getHeight());
+            addObject (new Heart(), randomX, randomY);
+        }
     }
     
     public void spawnGhost()
