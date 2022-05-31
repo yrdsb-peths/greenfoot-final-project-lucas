@@ -11,6 +11,9 @@ public class MyWorld extends World
     
     public int health = 3;
     Label healthLabel;
+    
+    public int score = 0;
+    Label scoreLabel;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -26,7 +29,22 @@ public class MyWorld extends World
         healthLabel = new Label(3, 80);
         addObject(healthLabel, 50, 50);
         
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 500, 50);
+        
         spawnGhost();
+    }
+    
+    public void gameOverFail()
+    {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
+    }
+    
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
     }
     
     public void act()
@@ -44,6 +62,11 @@ public class MyWorld extends World
     {
         health--;
         healthLabel.setValue(health);
+        
+        if(health < 0)
+        {
+            gameOverFail(); 
+        }
     }
     
     private void spawnHeart()

@@ -30,5 +30,17 @@ public class Character extends Actor
         {
             setLocation(getX(), getY()+5);
         }// Add your action code here.
+        
+        collect();
+    }
+    
+    public void collect()
+    {
+        if(isTouching(Heart.class))
+        {
+            removeTouching(Heart.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.increaseScore();
+        }
     }
 }
