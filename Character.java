@@ -32,6 +32,7 @@ public class Character extends Actor
         }// Add your action code here.
         
         collect();
+        
     }
     
     public void collect()
