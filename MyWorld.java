@@ -37,14 +37,24 @@ public class MyWorld extends World
     
     public void gameOverFail()
     {
-        Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
+        Label gameOverFailLabel = new Label("Game Over", 100);
+        addObject(gameOverFailLabel, 300, 200);
+    }
+    
+    public void gameOverWin()
+    {
+        Label gameOverWinLabel = new Label("Win!!", 100);
+        addObject(gameOverWinLabel, 300, 200);
     }
     
     public void increaseScore()
     {
         score++;
         scoreLabel.setValue(score);
+        if(score == 10)
+        {
+            gameOverWin();
+        }
     }
     
     public void act()
@@ -63,7 +73,7 @@ public class MyWorld extends World
         health--;
         healthLabel.setValue(health);
         
-        if(health < 0)
+        if(health == 0)
         {
             gameOverFail(); 
         }
