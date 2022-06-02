@@ -76,6 +76,7 @@ public class MyWorld extends World
         if(health == 0)
         {
             gameOverFail(); 
+            removeObject(healthLabel);
         }
     }
     

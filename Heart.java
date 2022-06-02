@@ -26,6 +26,7 @@ public class Heart extends Actor
         }
         else if (timeRemain < 60){
             getImage().setTransparency (60 + (timeRemain * 2));
-        }// Add your action code here.
+        }
+        // Add your action code here.
     }
 }

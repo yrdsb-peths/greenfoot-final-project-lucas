@@ -44,6 +44,12 @@ public class Ghost extends Actor
             world.decreaseHealth();
             world.spawnCharacter();
         }
+        
+        MyWorld world = (MyWorld) getWorld();
+        if(world.score == 10 || world.health == 0)
+        {
+            world.removeObject(this);
+        }
         // Add your action code here.
     }
 

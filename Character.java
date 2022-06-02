@@ -33,6 +33,12 @@ public class Character extends Actor
         
         collect();
         
+        MyWorld world = (MyWorld) getWorld();
+        if(world.score == 10 || world.health == 0)
+        {
+            world.removeObject(this);
+        }
+        
     }
     
     public void collect()
