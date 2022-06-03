@@ -10,7 +10,7 @@ public class Character extends Actor
 {
     
     
-    GreenfootSound heartSound = new GreenfootSound("heartsound.mp3");
+    GreenfootSound heartSound = new GreenfootSound("heartsound.mp3.wav");
     /**
      * Act - do whatever the Character wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
