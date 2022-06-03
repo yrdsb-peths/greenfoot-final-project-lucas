@@ -11,6 +11,8 @@ public class Ghost extends Actor
     int rightSideOfScreen;
     int bottomOfScreen;
     
+    GreenfootSound damageSound = new GreenfootSound("damagesound.mp3.wav");
+    
     public void addedToWorld(World MyWorld)
     {
         rightSideOfScreen = MyWorld.getWidth() - 1;
@@ -43,6 +45,7 @@ public class Ghost extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.decreaseHealth();
             world.spawnCharacter();
+            damageSound.play();
         }
         
         MyWorld world = (MyWorld) getWorld();
