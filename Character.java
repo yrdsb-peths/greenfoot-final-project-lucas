@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Character extends Actor
 {
+    
+    
+    GreenfootSound heartSound = new GreenfootSound("heartsound.mp3");
     /**
      * Act - do whatever the Character wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -48,6 +51,7 @@ public class Character extends Actor
             removeTouching(Heart.class);
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
+            heartSound.play();
         }
     }
 }
