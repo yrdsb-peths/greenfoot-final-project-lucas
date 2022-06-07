@@ -13,6 +13,7 @@ public class Character extends Actor
     GreenfootSound heartSound = new GreenfootSound("heartsound.mp3.wav");
     GreenfootImage[] idleRight = new GreenfootImage[4];
     GreenfootImage[] idleLeft = new GreenfootImage[4];
+    GreenfootImage[] idleFront = new GreenfootImage[4];
     
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
@@ -34,6 +35,12 @@ public class Character extends Actor
             idleLeft[i] = new GreenfootImage("images/character_idle/idle" + i + ".png.png");
             idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(80, 80);
+        }
+        
+        for(int i = 0; i < idleFront.length; i++)
+        {
+            idleFront[i] = new GreenfootImage("images/character_idle_front/idleFront" + i + ".png");
+            idleFront[i].scale(80, 80);
         }
         
         animationTimer.mark();
@@ -60,6 +67,12 @@ public class Character extends Actor
             setImage(idleLeft[imageIndex]);
             imageIndex = (imageIndex + 1) % idleLeft.length;
         }
+        
+        if(facing.equals("front"))
+        {
+            setImage(idleFront[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleFront.length;
+        }
     }
     public void act()
     {
@@ -80,6 +93,7 @@ public class Character extends Actor
         else if(Greenfoot.isKeyDown("s"))
         {
             setLocation(getX(), getY()+5);
+            facing = "front";
         }// Add your action code here.
         
         collect();
