@@ -12,6 +12,9 @@ public class Ghost extends Actor
     int bottomOfScreen;
     
     GreenfootSound damageSound = new GreenfootSound("damagesound.mp3.wav");
+    GreenfootImage[] ghostIdle = new GreenfootImage[6];
+    
+    SimpleTimer animationTimer = new SimpleTimer();
     
     public void addedToWorld(World MyWorld)
     {
@@ -22,6 +25,34 @@ public class Ghost extends Actor
      * Act - do whatever the Ghost wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    public Ghost()
+    {
+        for(int i = 0; i < ghostIdle.length; i++)
+        {
+            ghostIdle[i] = new GreenfootImage("images/ghost_idle/ghost_idle" + i + ".png");
+            ghostIdle[i].scale(80, 80);
+    
+        }
+        
+        animationTimer.mark();
+        
+        setImage(ghostIdle[0]);
+    }
+    
+    int imageIndex = 0;
+    public void animateGhost()
+    {
+        if(animationTimer.millisElapsed() < 200)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        setImage(ghostIdle[imageIndex]);
+        imageIndex = (imageIndex + 1) % ghostIdle.length;
+    }
+        
     
     public void act()
     {
