@@ -14,6 +14,7 @@ public class Character extends Actor
     GreenfootImage[] idleRight = new GreenfootImage[4];
     GreenfootImage[] idleLeft = new GreenfootImage[4];
     GreenfootImage[] idleFront = new GreenfootImage[4];
+    GreenfootImage[] idleBack = new GreenfootImage[4];
     
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
@@ -41,6 +42,12 @@ public class Character extends Actor
         {
             idleFront[i] = new GreenfootImage("images/character_idle_front/idleFront" + i + ".png");
             idleFront[i].scale(80, 80);
+        }
+        
+        for(int i = 0; i < idleBack.length; i++)
+        {
+            idleBack[i] = new GreenfootImage("images/character_idle_back/idleBack" + i + ".png");
+            idleBack[i].scale(80, 80);
         }
         
         animationTimer.mark();
@@ -73,6 +80,12 @@ public class Character extends Actor
             setImage(idleFront[imageIndex]);
             imageIndex = (imageIndex + 1) % idleFront.length;
         }
+        
+        if(facing.equals("back"))
+        {
+            setImage(idleBack[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleBack.length;
+        }
     }
     public void act()
     {
@@ -89,6 +102,7 @@ public class Character extends Actor
         else if(Greenfoot.isKeyDown("w"))
         {
             setLocation(getX(), getY()-5);
+            facing = "back";
         }
         else if(Greenfoot.isKeyDown("s"))
         {
