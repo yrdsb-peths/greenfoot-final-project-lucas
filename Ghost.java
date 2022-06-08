@@ -80,7 +80,7 @@ public class Ghost extends Actor
         }
         
         MyWorld world = (MyWorld) getWorld();
-        if(world.score == 80 || world.health == 0)
+        if(world.score == 30 || world.health == 0)
         {
             world.removeObject(this);
         }

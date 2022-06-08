@@ -51,7 +51,7 @@ public class MyWorld extends World
     {
         score++;
         scoreLabel.setValue(score);
-        if(score == 80)
+        if(score == 30)
         {
             gameOverWin();
         }
