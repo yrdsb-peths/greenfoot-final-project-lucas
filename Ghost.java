@@ -10,6 +10,7 @@ public class Ghost extends Actor
 {
     int rightSideOfScreen;
     int bottomOfScreen;
+
     
     GreenfootSound damageSound = new GreenfootSound("damagesound.mp3.wav");
     GreenfootImage[] ghostIdle = new GreenfootImage[6];
@@ -86,5 +87,6 @@ public class Ghost extends Actor
         }
         // Add your action code here.
     }
-
+    
+    
 }
