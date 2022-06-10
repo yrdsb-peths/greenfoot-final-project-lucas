@@ -10,7 +10,6 @@ public class Ghost extends Actor
 {
     int rightSideOfScreen;
     int bottomOfScreen;
-    int speed = 5;
 
     
     GreenfootSound damageSound = new GreenfootSound("damagesound.mp3.wav");
@@ -57,8 +56,10 @@ public class Ghost extends Actor
         
     public void act()
     {
-        
+        int speed = 5;
+ 
         move(speed);
+        
         if(Greenfoot.getRandomNumber(20) == 1)
         {
             setRotation(Greenfoot.getRandomNumber(360));
@@ -79,6 +80,7 @@ public class Ghost extends Actor
             world.decreaseHealth();
             world.spawnCharacter();
             damageSound.play();
+            turn(180);
         }
         
         MyWorld world = (MyWorld) getWorld();
@@ -88,5 +90,4 @@ public class Ghost extends Actor
         }
         // Add your action code here.
     }
-    
 }
