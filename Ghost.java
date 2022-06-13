@@ -10,6 +10,10 @@ public class Ghost extends Actor
 {
     int rightSideOfScreen;
     int bottomOfScreen;
+    
+    int speed = 3;
+    
+    private int timer = 0;
 
     
     GreenfootSound damageSound = new GreenfootSound("damagesound.mp3.wav");
@@ -56,7 +60,16 @@ public class Ghost extends Actor
         
     public void act()
     {
-        int speed = 5;
+        timer++;
+        
+        if(timer % 300 == 0)
+        {
+            speed++;
+            if(speed >= 9)
+            {
+                speed = 9;
+            }
+        }
  
         move(speed);
         
