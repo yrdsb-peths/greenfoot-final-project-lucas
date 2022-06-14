@@ -43,5 +43,16 @@ public class TitleScreen extends World
         addObject(label,getWidth()/2,350);
         Label label2 = new Label("Press <space> to Start", 30);
         addObject(label2,getWidth()/2,297);
+        Label label3 = new Label("Collect hearts while avoiding randomly moving ghost.", 30);
+        addObject(label3,getWidth()/2,110);
+
+        Label label4 = new Label("The ghost movement speed will accelerate", 30);
+        addObject(label4,getWidth()/2,140);
+        Label label5 = new Label("as the game time increases.", 30);
+        addObject(label5,getWidth()/2,170);
+        Label label6 = new Label(" Hearts will vanish after a specific period of time;", 30);
+        addObject(label6,getWidth()/2,200);
+        Label label7 = new Label("gather 30 hearts to win.", 30);
+        addObject(label7,getWidth()/2,230);
     }
 }

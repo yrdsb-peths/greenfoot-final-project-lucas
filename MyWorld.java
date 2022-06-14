@@ -37,13 +37,13 @@ public class MyWorld extends World
     
     public void gameOverFail()
     {
-        Label gameOverFailLabel = new Label("Game Over", 100);
+        Label gameOverFailLabel = new Label("You Are Killed By The Ghost :(", 50);
         addObject(gameOverFailLabel, 300, 200);
     }
     
     public void gameOverWin()
     {
-        Label gameOverWinLabel = new Label("Win!!", 100);
+        Label gameOverWinLabel = new Label("Win!! :)", 100);
         addObject(gameOverWinLabel, 300, 200);
     }
     
