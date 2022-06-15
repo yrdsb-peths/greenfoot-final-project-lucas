@@ -1,10 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ghost here.
+ * The Ghost Class is called in the MyWorld Class. The class is spawned randomly
+ * in the world and granted with random movement and action. The moving speed 
+ * increases as the game time increase.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas Deng
+ * @version June 2022
  */
 public class Ghost extends Actor
 {
@@ -26,11 +28,12 @@ public class Ghost extends Actor
         rightSideOfScreen = MyWorld.getWidth() - 1;
         bottomOfScreen = MyWorld.getHeight() - 1;
     }
-    /**
-     * Act - do whatever the Ghost wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     
+    /**
+     * The Ghost method sets the idle image for the ghost with given size. 
+     * 
+     * @return nothing
+     */
     public Ghost()
     {
         for(int i = 0; i < ghostIdle.length; i++)
@@ -45,6 +48,14 @@ public class Ghost extends Actor
         setImage(ghostIdle[0]);
     }
     
+    
+    /**
+     * The animateGhost method sets the image of the animation of the Ghost Class.
+     * It sets the speed of the Ghost's animation using a timer with a pre-set speed
+     * of 200 milliseconds.
+     * 
+     * @return nothing
+     */
     int imageIndex = 0;
     public void animateGhost()
     {
@@ -58,6 +69,20 @@ public class Ghost extends Actor
         imageIndex = (imageIndex + 1) % ghostIdle.length;
     }
         
+    
+    /**
+     * Act - do whatever the Ghost wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment. The act method
+     * adjust the moving speed of the ghost. The ghost accelerates as the predetermined
+     * int variable timer increase. When int speed equals 9, it maintains at 9. When the class reaches the realm of the  world, it turns 180 degrees.
+     * It checks whether boolean isTouching(Character.class) equals true; If
+     * the condition is true, Chracter Class will be removed and spawn a new 
+     * Character Class at the middle of the world. Simultansously, damageSound will
+     * be played and score decrease by 1 once the boolean condition is detected true.
+     * When the end game conditions are true, the class will be removed from world.
+     * 
+     * @return nothing
+     */
     public void act()
     {
         timer++;
@@ -77,7 +102,7 @@ public class Ghost extends Actor
         {
             setRotation(Greenfoot.getRandomNumber(360));
         }
-        
+
         int x = getX();
         int y = getY();
         
@@ -101,6 +126,5 @@ public class Ghost extends Actor
         {
             world.removeObject(this);
         }
-        // Add your action code here.
     }
 }

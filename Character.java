@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Character here.
+ * The Character class is the class that allows player interaction. The player
+ * utilizes keys w, a, s, d to enable the game character to move around the world.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas Deng
+ * @version June 2022
  */
 public class Character extends Actor
 {
@@ -19,8 +20,9 @@ public class Character extends Actor
     String facing = "right";
     SimpleTimer animationTimer = new SimpleTimer();
     /**
-     * Act - do whatever the Character wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     *It stores the code for animating the character in different direcrion.
+     * 
+     * @return nothing
      */
     public Character()
     {
@@ -55,6 +57,13 @@ public class Character extends Actor
         setImage(idleRight[0]);
     }
     
+    /**
+     * This method utilizes the setImage method to animate Character. It uses
+     * a timer to set the speed of animation. The 4 sets of animation images 
+     * are set and animated according to the facing of the Character.
+     * 
+     * @Return animation time.
+     */
     int imageIndex = 0;
     public void animateCharacter()
     {
@@ -87,6 +96,17 @@ public class Character extends Actor
             imageIndex = (imageIndex + 1) % idleBack.length;
         }
     }
+    
+    /**
+     * Act - do whatever the Character wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment. It stores the
+     * facing condition based on the command given by the player via keys w,a,s,d,
+     * and passes the string value back to the method animateCharacter() in order
+     * to animte the character. The act method makes use of the animateCharacter()
+     * method.
+     * 
+     * @return nothing
+     */
     public void act()
     {
         if(Greenfoot.isKeyDown("a"))
@@ -108,7 +128,7 @@ public class Character extends Actor
         {
             setLocation(getX(), getY()+5);
             facing = "front";
-        }// Add your action code here.
+        }
         
         collect();
         animateCharacter();
@@ -121,6 +141,14 @@ public class Character extends Actor
         
     }
     
+    /**
+     * The collect() method detects the boolean isTouching, which check whether
+     * the Character class is touching the Heart Class. If the boolean condition
+     * is true, the Heart Class will be removes, the score increase by 1 while
+     * playing the audio heartSound.
+     * 
+     * @return boolan isTouching of Heart Class.
+     */
     public void collect()
     {
         if(isTouching(Heart.class))
