@@ -11,5 +11,5 @@ comment3.target=void\ act()
 comment3.text=\r\n\ Act\ -\ do\ whatever\ the\ Character\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\ It\ stores\ the\r\n\ facing\ condition\ based\ on\ the\ command\ given\ by\ the\ player\ via\ keys\ w,a,s,d,\r\n\ and\ passes\ the\ string\ value\ back\ to\ the\ method\ animateCharacter()\ in\ order\r\n\ to\ animte\ the\ character.\ The\ act\ method\ makes\ use\ of\ the\ animateCharacter()\r\n\ method.\r\n\ \r\n\ @return\ nothing\r\n
 comment4.params=
 comment4.target=void\ collect()
-comment4.text=\r\n\ The\ collect()\ method\ detects\ the\ boolean\ isTouching,\ which\ check\ whether\r\n\ the\ Character\ class\ is\ touching\ the\ Heart\ Class.\ If\ the\ boolean\ condition\r\n\ is\ true,\ the\ Heart\ Class\ will\ be\ removes,\ the\ score\ increase\ by\ 1\ while\r\n\ playing\ the\ audio\ heartSound.\r\n\ \r\n\ @return\ boolan\ isTouching\ of\ Heart\ Class.\r\n
+comment4.text=\r\n\ The\ collect()\ method\ detects\ the\ boolean\ isTouching,\ which\ check\ whether\r\n\ the\ Character\ class\ is\ touching\ the\ Heart\ Class.\ If\ the\ boolean\ condition\r\n\ is\ true,\ the\ Heart\ Class\ will\ be\ removes,\ the\ score\ increase\ by\ 1\ while\r\n\ playing\ the\ audio\ heartSound.\r\n
 numComments=5

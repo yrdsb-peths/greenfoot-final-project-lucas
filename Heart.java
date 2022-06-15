@@ -1,16 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Heart here.
+ * The Heart class gets called in MyWorld Class and spawns hearts in the world
+ * at random location.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas Deng 
+ * @version June 2022
  */
 public class Heart extends Actor
 {
     /**
-     * Act - do whatever the Heart wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     *The Heart method sets the time remain of the heart spawned in the world.
      */
     private int timeRemain;
     public Heart()
@@ -18,6 +18,12 @@ public class Heart extends Actor
         timeRemain = 100;
     }
     
+    /**
+     * The act() method counts down the predetermined remain time once the heart
+     * is spawned. When remain time less than 60, the transparency of the image of the heart
+     * gradually increases. When int timeRemain equals 0, object will be removed
+     * from the world.
+     */
     public void act()
     {
         timeRemain--;
@@ -27,6 +33,5 @@ public class Heart extends Actor
         else if (timeRemain < 60){
             getImage().setTransparency (60 + (timeRemain * 2));
         }
-        // Add your action code here.
     }
 }

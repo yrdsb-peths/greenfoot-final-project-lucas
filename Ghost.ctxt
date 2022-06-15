@@ -10,5 +10,5 @@ comment3.params=
 comment3.target=void\ animateGhost()
 comment4.params=
 comment4.target=void\ act()
-comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ Ghost\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\ The\ act\ method\r\n\ adjust\ the\ moving\ speed\ of\ the\ ghost.\ The\ ghost\ accelerates\ as\ the\ predetermined\r\n\ int\ variable\ timer\ increase.\ When\ int\ speed\ equals\ 9,\ it\ maintains\ at\ 9.\ When\ the\ class\ reaches\ the\ realm\ of\ the\ \ world,\ it\ turns\ 180\ degrees.\r\n\ It\ checks\ whether\ boolean\ isTouching(Character.class)\ equals\ true;\ If\r\n\ the\ condition\ is\ true,\ Chracter\ Class\ will\ be\ removed\ and\ spawn\ a\ new\ \r\n\ Character\ Class\ at\ the\ middle\ of\ the\ world.\ Simultansously,\ damageSound\ will\r\n\ be\ played\ and\ score\ decrease\ by\ 1\ once\ the\ boolean\ condition\ is\ detected\ true.\r\n\ When\ the\ end\ game\ conditions\ are\ true,\ the\ class\ will\ be\ removed\ from\ world.\r\n\ \r\n\ @return\ nothing\r\n
+comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ Ghost\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\ The\ act\ method\r\n\ adjust\ the\ moving\ speed\ and\ touching\ conditions\ of\ the\ ghost.\r\n\ \r\n\ @return\ nothing\r\n
 numComments=5

@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Heart
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Heart\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ Heart\ class\ gets\ called\ in\ MyWorld\ Class\ and\ spawns\ hearts\ in\ the\ world\r\n\ at\ random\ location.\r\n\ \r\n\ @author\ Lucas\ Deng\ \r\n\ @version\ June\ 2022\r\n
 comment1.params=
 comment1.target=Heart()
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ The\ act()\ method\ counts\ down\ the\ predetermined\ remain\ time\ once\ the\ heart\r\n\ is\ spawned.\ When\ remain\ time\ less\ than\ 60,\ the\ transparency\ of\ the\ image\ of\ the\ heart\r\n\ gradually\ increases.\ When\ int\ timeRemain\ equals\ 0,\ object\ will\ be\ removed\r\n\ from\ the\ world.\r\n
 numComments=3

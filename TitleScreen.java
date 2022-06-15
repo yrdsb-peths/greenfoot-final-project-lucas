@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * The TitleScreen class sets the title page of the game including instructions
+ * and the game's name.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lucas Deng 
+ * @version June 2022
  */
 public class TitleScreen extends World
 {
@@ -22,7 +23,12 @@ public class TitleScreen extends World
         addObject(titleLabel, getWidth()/2, 50);
         prepare();
     }
-
+    
+    /**
+     * The act method allows the player to start the game by pressing the
+     * space key. MyWorld Class get set by this method.
+     *  
+     */
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))

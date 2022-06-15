@@ -59,10 +59,7 @@ public class Character extends Actor
     
     /**
      * This method utilizes the setImage method to animate Character. It uses
-     * a timer to set the speed of animation. The 4 sets of animation images 
-     * are set and animated according to the facing of the Character.
-     * 
-     * @Return animation time.
+     * a timer to set the speed of animation.
      */
     int imageIndex = 0;
     public void animateCharacter()
@@ -73,6 +70,10 @@ public class Character extends Actor
         }
         animationTimer.mark();
         
+        /*
+         * It sets the animation images based on string facing given
+         * by the player according to the key pressed down.
+         */
         if(facing.equals("right"))
         {
             setImage(idleRight[imageIndex]);
@@ -146,8 +147,6 @@ public class Character extends Actor
      * the Character class is touching the Heart Class. If the boolean condition
      * is true, the Heart Class will be removes, the score increase by 1 while
      * playing the audio heartSound.
-     * 
-     * @return boolan isTouching of Heart Class.
      */
     public void collect()
     {

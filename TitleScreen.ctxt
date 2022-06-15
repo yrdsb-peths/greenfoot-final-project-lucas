@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=TitleScreen
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ TitleScreen\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ TitleScreen\ class\ sets\ the\ title\ page\ of\ the\ game\ including\ instructions\r\n\ and\ the\ game's\ name.\r\n\ \r\n\ @author\ Lucas\ Deng\ \r\n\ @version\ June\ 2022\r\n
 comment1.params=
 comment1.target=TitleScreen()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ TitleScreen.\r\n\ \r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ The\ act\ method\ allows\ the\ player\ to\ start\ the\ game\ by\ pressing\ the\r\n\ space\ key.\ MyWorld\ Class\ get\ set\ by\ this\ method.\r\n\ \ \r\n
 comment3.params=
 comment3.target=void\ prepare()
 comment3.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n

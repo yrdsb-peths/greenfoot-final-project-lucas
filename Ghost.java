@@ -47,8 +47,7 @@ public class Ghost extends Actor
         
         setImage(ghostIdle[0]);
     }
-    
-    
+
     /**
      * The animateGhost method sets the image of the animation of the Ghost Class.
      * It sets the speed of the Ghost's animation using a timer with a pre-set speed
@@ -73,13 +72,7 @@ public class Ghost extends Actor
     /**
      * Act - do whatever the Ghost wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment. The act method
-     * adjust the moving speed of the ghost. The ghost accelerates as the predetermined
-     * int variable timer increase. When int speed equals 9, it maintains at 9. When the class reaches the realm of the  world, it turns 180 degrees.
-     * It checks whether boolean isTouching(Character.class) equals true; If
-     * the condition is true, Chracter Class will be removed and spawn a new 
-     * Character Class at the middle of the world. Simultansously, damageSound will
-     * be played and score decrease by 1 once the boolean condition is detected true.
-     * When the end game conditions are true, the class will be removed from world.
+     * adjust the moving speed and touching conditions of the ghost.
      * 
      * @return nothing
      */
@@ -87,6 +80,10 @@ public class Ghost extends Actor
     {
         timer++;
         
+        /*
+         * The ghost accelerates as the predetermined int variable timer increase. 
+         * When int speed equals 9, speed maintains at 9.
+         */
         if(timer % 300 == 0)
         {
             speed++;
@@ -98,6 +95,7 @@ public class Ghost extends Actor
  
         move(speed);
         
+        //Difficulty increases by randomly turning around.
         if(Greenfoot.getRandomNumber(20) == 1)
         {
             setRotation(Greenfoot.getRandomNumber(360));
@@ -106,11 +104,19 @@ public class Ghost extends Actor
         int x = getX();
         int y = getY();
         
+        
         if(x <= 0 || y <= 0 || x >= rightSideOfScreen || y >= bottomOfScreen)
         {
             turn(180);
         }
         
+        /*
+         * When the class reaches the realm of the  world, it turns 180 degrees.
+         * It checks whether boolean isTouching(Character.class) equals true; If
+         * the condition is true, Chracter Class will be removed and spawn a new 
+         * Character Class at the middle of the world and turns 180 degrees
+         * preventing multiple damages.
+         */
         if(isTouching(Character.class))
         {
             removeTouching(Character.class);
@@ -121,6 +127,7 @@ public class Ghost extends Actor
             turn(180);
         }
         
+        //Object removed when score equals 30.
         MyWorld world = (MyWorld) getWorld();
         if(world.score == 30 || world.health == 0)
         {
