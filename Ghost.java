@@ -49,7 +49,7 @@ public class Ghost extends Actor
     }
 
     /**
-     * The animateGhost method sets the image of the animation of the Ghost Class.
+     * The animateGhost() method sets the image of the animation of the Ghost Class.
      * It sets the speed of the Ghost's animation using a timer with a pre-set speed
      * of 200 milliseconds.
      * 

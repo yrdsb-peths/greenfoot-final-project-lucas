@@ -134,6 +134,7 @@ public class Character extends Actor
         collect();
         animateCharacter();
         
+        //If int score and health reaches 30 or 0 respectively, object will be removed.
         MyWorld world = (MyWorld) getWorld();
         if(world.score == 30 || world.health == 0)
         {
