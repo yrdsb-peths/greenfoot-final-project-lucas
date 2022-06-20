@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     
+    GreenfootSound backgroundMusic = new GreenfootSound("backgroundmusic.mp3.mp3");
+    
     public int health = 3;
     Label healthLabel;
     
@@ -33,6 +35,8 @@ public class MyWorld extends World
         addObject(scoreLabel, 500, 50);
         
         spawnGhost();
+        
+        backgroundMusic.play();
     }
     
     
