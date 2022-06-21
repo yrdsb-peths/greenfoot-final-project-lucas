@@ -10,6 +10,8 @@ public class MyWorld extends World
 {
     
     GreenfootSound backgroundMusic = new GreenfootSound("backgroundmusic.mp3.mp3");
+    GreenfootSound screamSound = new GreenfootSound("screamsound.mp3.mp3");
+    GreenfootSound winMusic = new GreenfootSound("winsoundeffect.mp3.mp3");
     
     public int health = 3;
     Label healthLabel;
@@ -48,6 +50,7 @@ public class MyWorld extends World
     {
         Label gameOverFailLabel = new Label("You Are Killed By The Ghost :(", 50);
         addObject(gameOverFailLabel, 300, 200);
+        screamSound.play();
     }
     
     /**
@@ -57,6 +60,7 @@ public class MyWorld extends World
     {
         Label gameOverWinLabel = new Label("Win!! :)", 100);
         addObject(gameOverWinLabel, 300, 200);
+        winMusic.play();
     }
     
     
